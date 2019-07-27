@@ -3,6 +3,9 @@ image: ubuntu
 environment:
   APPVEYOR_SAVE_CACHE_ON_ERROR: true
 
+before_build:
+  - sh: sudo apt update && sudo apt install lcov
+
 build_script:
   - mkdir build
   - cd build
