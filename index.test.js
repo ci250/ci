@@ -1,5 +1,5 @@
-const index = require('./index');
+const index = require("./index");
 
-test('yeg', () => {
+test("yeg", () => {
   expect(index()).toBe(true);
 });
