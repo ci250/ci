@@ -4,3 +4,4 @@
 [![Build Status](https://travis-ci.org/ci249/ci.svg?branch=master)](https://travis-ci.org/ci249/ci)
 [![Build status](https://ci.appveyor.com/api/projects/status/x9mq6i3j2yk4n5nl?svg=true)](https://ci.appveyor.com/project/ci249/ci)
 [![CircleCI](https://circleci.com/gh/ci249/ci.svg?style=svg)](https://circleci.com/gh/ci249/ci)
+[![codecov](https://codecov.io/gh/ci249/ci/branch/master/graph/badge.svg)](https://codecov.io/gh/ci249/ci)
