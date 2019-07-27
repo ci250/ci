@@ -1,13 +1,10 @@
-image: Visual Studio 2015
-
 environment:
   APPVEYOR_SAVE_CACHE_ON_ERROR: true
 
-build_script:
-  - mkdir build
-  - cd build
-  - msbuild ci.sln /t:Build /p:Configuration=Debug /p:TargetFramework=v2.0
+install:
+  - ps: Install-Product node
 
-artifacts:
-  - path: bin/Debug/ci.exe
-    name: ci.exe
+build_script:
+  - node index.js
+  
+build: off

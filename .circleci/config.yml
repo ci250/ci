@@ -1,15 +1,11 @@
 version: 2
 
 jobs:
-  build:
+  run:
     docker:
-     - image: mono:latest
+     - image: circleci/node:latest
     steps:
      - checkout
-     - run: 'apt update -y && apt install lcov -y'
-     - run: 'msbuild ci.sln /t:Build /p:Configuration=Debug /p:TargetFramework=v2.0'
-     - store_artifacts: 
-         path: bin/Debug/ci.exe
-         destination: ci
-     - run: "coveralls --gcov-options '\-lp'"
+     - run: 'node index.js'
+     - run: 'coveralls --gcov-options "-lp"'
      - run: 'bash <(curl -s https://codecov.io/bash) | sed -E "s/token=[A-Fa-f0-9\-]+/token=[codecov token]/g" | sed -e "s/$CODECOV_TOKEN/[codecov token]/g"'
