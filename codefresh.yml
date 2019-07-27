@@ -2,5 +2,12 @@ version: '1.0'
 steps:
   build:
     type: build
-    dockerfile: ${{main_clone}}/Dockerfile
     image-name: ci
+    dockerfile:
+      content: >-
+        FROM debian:stretch
+        RUN apt-get update && apt-get install -y sudo gcc g++ cmake git
+        RUN git clone https://github.com/ci249/ci
+        WORKDIR ./ci
+        RUN cmake -H. -Bbuild && cmake --build build
+        CMD ["./build/ci"]
