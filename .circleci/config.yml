@@ -12,5 +12,5 @@ jobs:
      - run: 'cat coverage.lcov | node ./node_modules/coveralls/bin/coveralls.js'
      - run: 'node ./node_modules/.bin/codecov'
      - run: 'cat coverage.lcov | node ./node_modules/codacy-coverage/bin/codacy-coverage.js'
-     - run: "mkdir tmp && wget https://scan.coverity.com/download/cxx/linux32 -O- | tar xf - -C tmp && ./tmp/cov-analysis-linux-2019.03/bin/cov-build -dir cov-int --no-command --fs-capture-search ./"
+     - run: "mkdir tmp && wget https://scan.coverity.com/download/cxx/linux32 --post-data 'token=$COVTOKEN' -O- | tar xf - -C tmp && ./tmp/cov-analysis-linux-2019.03/bin/cov-build -dir cov-int --no-command --fs-capture-search ./"
      - run: 'tar -czf tarball.tgz README.md coverage.lcov && curl --form token=$COVTOKEN --form email=$COVMAIL --form file=@tarball.tgz --form version="1.0.0" --form description="ci" https://scan.coverity.com/builds?project=ci249%2Fci'
