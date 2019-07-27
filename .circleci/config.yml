@@ -12,4 +12,4 @@ jobs:
      - run: 'cat coverage.lcov | node ./node_modules/coveralls/bin/coveralls.js'
      - run: 'node ./node_modules/.bin/codecov'
      - run: 'cat coverage.lcov | node ./node_modules/codacy-coverage/bin/codacy-coverage.js'
-     - run: 'tar -czf tarball.tgz README coverage.lcov && curl --form token=$COVTOKEN --form email=$COVMAIL --form file=@tarball.tgz --form version="1.0.0" --form description="ci" https://scan.coverity.com/builds?project=ci249%2Fci'
+     - run: 'tar -czf tarball.tgz README.md coverage.lcov && curl --form token=$COVTOKEN --form email=$COVMAIL --form file=@tarball.tgz --form version="1.0.0" --form description="ci" https://scan.coverity.com/builds?project=ci249%2Fci'
