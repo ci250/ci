@@ -3,24 +3,11 @@ image: Visual Studio 2015
 environment:
   APPVEYOR_SAVE_CACHE_ON_ERROR: true
 
-before_build:
- - nuget install OpenCover -Version 4.7.922
-
 build_script:
   - mkdir build
   - cd build
   - cmake -G "Visual Studio 14 2015" -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%/install/ ..
   - cmake --build . --target install
-
-
-test_script:
- - OpenCover.4.7.922\tools\OpenCover.Console.exe -register:user -target:"ci.exe" -output:"coverage.xml"
-
-after_test:
-  - ps: |
-      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
-      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
-      bash codecov.sh -f "coverage.xml" -t YourUploadToken
 
 artifacts:
   - path: build/
