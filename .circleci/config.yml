@@ -15,8 +15,8 @@ jobs:
          path: build/ci
          destination: ci
      - codecov/upload:
-         file: {{ coverage_report_filepath }}
-         
+         file: build/ci
+
 workflows:
   version: 2
   build:
