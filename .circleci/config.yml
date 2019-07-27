@@ -8,4 +8,5 @@ jobs:
       - run: 'apt-get update && apt-get install -y sudo gcc g++ cmake'
       - run: 'cmake -H. -Bbuild && cmake --build build'
       - store_artifacts: 
-          path: build
+          path: build/ci
+          destination: ci
