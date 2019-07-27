@@ -6,7 +6,8 @@ jobs:
      - image: circleci/node:latest
     steps:
      - checkout
-     - run: 'npm i coveralls jest codecov'
+     - run: 'npm i jest -g'
+     - run: 'npm i coveralls codecov'
      - run: 'node index.js'
      - run: 'jest --coverage && cp ./coverage/lcov.info coverage.lcov'
      - run: 'cat coverage.lcov | ./node_modules/coveralls/bin/coveralls.js'
