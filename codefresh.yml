@@ -4,3 +4,4 @@ steps:
     type: build
     working-directory: ${{main_clone}}
     dockerfile: Dockerfile
+    image-name: ci
