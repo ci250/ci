@@ -2,13 +2,7 @@ version: 2
 
 orbs:
   codecov: codecov/codecov@1.0.2
-  
-workflows:
-  version: 2
-  workflow:
-    jobs:
-    - build
-        
+
 jobs:
   build:
     docker:
@@ -22,3 +16,9 @@ jobs:
          destination: ci
      - codecov/upload:
          file: {{ coverage_report_filepath }}
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build
