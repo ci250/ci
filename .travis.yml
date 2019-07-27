@@ -1,22 +1,7 @@
-language: cpp
+language: csharp
+solution: ci.sln
 
-addons:
-  apt:
-    packages: lcov
+mono:
+  - latest
 
-compiler:
-  - gcc
-  - clang
-
-before_install:
-  - pip install --user cpp-coveralls
-
-before_script:
-  - mkdir build
-  - cd build
-  - cmake -H.. -Bbuild -DCMAKE_BUILD_TYPE=Debug
-
-script: cmake --build build --config Debug
-
-after_success:
-  - coveralls --gcov-options '\-lp'
+script: msbuild ci.sln /t:Build /p:Configuration=Debug /p:TargetFramework=v2.0
