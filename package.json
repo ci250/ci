@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node test.js"
+    "test": "node index.test.js"
   },
   "author": "ci249",
   "license": "Unlicense",
