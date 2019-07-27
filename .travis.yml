@@ -1,5 +1,9 @@
 language: cpp
 
+addons:
+  apt:
+    packages: lcov
+
 compiler:
   - gcc
   - clang
