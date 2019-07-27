@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/ci249/ci.git"
   },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
   "author": "ci249",
   "license": "Unlicense",
   "bugs": {
