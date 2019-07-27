@@ -2,11 +2,12 @@ cmake_minimum_required (VERSION 2.6)
 project (ci)
 add_executable(ci main.cpp)
 
-LIST(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake_modules")
-include(CodeCoverage)
-APPEND_COVERAGE_COMPILER_FLAGS()
-SETUP_TARGET_FOR_COVERAGE_LCOV(NAME coverage
-                              EXECUTABLE ci)
+if(NOT MSVC)
+  LIST(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake_modules")
+  include(CodeCoverage)
+  APPEND_COVERAGE_COMPILER_FLAGS()
+  SETUP_TARGET_FOR_COVERAGE_LCOV(NAME coverage EXECUTABLE ci)
+endif()
 
 add_library(coverage_config INTERFACE)
 target_compile_options(coverage_config INTERFACE
