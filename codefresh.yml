@@ -1,0 +1,6 @@
+version: '1.0'
+steps:
+  build:
+    type: build
+    dockerfile: Dockerfile
+    image-name: ci
