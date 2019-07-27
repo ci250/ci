@@ -6,9 +6,9 @@ environment:
 build_script:
   - mkdir build
   - cd build
-  - cmake -G "Visual Studio 14 2015" ..
+  - cmake -G "Visual Studio 14 2015" -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%/install/ ..
   - cmake --build . --target ci
   
 artifacts:
-  - path: Debug/
+  - path: install/
     name: ci
