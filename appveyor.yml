@@ -7,5 +7,5 @@ build_script:
   - cmake --build . --target ci
   
 artifacts:
-  - path: install/
+  - path: Debug/
     name: ci
