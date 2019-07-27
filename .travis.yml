@@ -1,7 +1,6 @@
-language: csharp
-solution: ci.sln
+language: node_js
 
-mono:
-  - latest
+node_js:
+  - "lts/*"
 
-script: msbuild ci.sln /t:Build /p:Configuration=Debug /p:TargetFramework=v2.0
+script: node index.js

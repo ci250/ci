@@ -1,0 +1,16 @@
+{
+  "name": "ci",
+  "version": "1.0.0",
+  "description": "ci",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ci249/ci.git"
+  },
+  "author": "ci249",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/ci249/ci/issues"
+  },
+  "homepage": "https://github.com/ci249/ci#readme"
+}
