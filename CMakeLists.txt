@@ -2,19 +2,27 @@ cmake_minimum_required (VERSION 2.6)
 project (ci)
 add_executable(ci main.cpp)
 
-set_target_properties(ci
-    PROPERTIES
-    COMPILE_FLAGS "-ftest-coverage -fprofile-arcs"
-    LINK_FLAGS    "-lgcov --coverage"
-)
-
-if(CMAKE_COMPILER_IS_GNUCXX)
 LIST(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake_modules")
 include(CodeCoverage)
 APPEND_COVERAGE_COMPILER_FLAGS()
 SETUP_TARGET_FOR_COVERAGE_LCOV(NAME coverage
                               EXECUTABLE ci)
-endif()
+
+add_library(coverage_config INTERFACE)
+
+option(CODE_COVERAGE "Enable coverage reporting" OFF)
+if(CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  target_compile_options(coverage_config INTERFACE
+    -O0        
+    -g         
+    --coverage
+  )
+  if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.13)
+    target_link_options(coverage_config INTERFACE --coverage)
+  else()
+    target_link_libraries(coverage_config INTERFACE --coverage)
+  endif()
+endif(CODE_COVERAGE)
 
 install(TARGETS ${PROJECT_NAME} DESTINATION build)
 if(MSVC)
