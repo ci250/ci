@@ -9,7 +9,7 @@ jobs:
      - image: debian:stretch
     steps:
      - checkout
-     - run: 'apt-get update && apt-get install -y sudo gcc g++ cmake lcov'
+     - run: 'apt-get update && apt-get install -y sudo gcc g++ cmake lcov curl'
      - run: 'cmake -H. -Bbuild && cmake --build build'
      - store_artifacts: 
          path: build/ci
