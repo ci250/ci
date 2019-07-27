@@ -1,4 +1,4 @@
-image: Visual Studio 2015
+image: ubuntu
 
 environment:
   APPVEYOR_SAVE_CACHE_ON_ERROR: true
@@ -6,9 +6,12 @@ environment:
 build_script:
   - mkdir build
   - cd build
-  - cmake -G "Visual Studio 14 2015" -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%/install/ ..
+  - cmake -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%/install/ ..
   - cmake --build . --target install
-  
+ 
+after_build:
+  - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
+
 artifacts:
   - path: install/
     name: ci
