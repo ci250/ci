@@ -3,8 +3,8 @@ image: Visual Studio 2015
 build_script:
   - mkdir build
   - cd build
-  - cmake -G "Visual Studio 14 2015" -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
-  - cmake --build . --target install --config RelWithDebInfo
+  - cmake -G "Visual Studio 14 2015" ..
+  - cmake --build . --target install
   
 artifacts:
   - path: install/
