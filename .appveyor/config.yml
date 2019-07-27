@@ -1,19 +1,26 @@
-image: ubuntu
+image: Visual Studio 2015
 
 environment:
   APPVEYOR_SAVE_CACHE_ON_ERROR: true
 
 before_build:
-  - sh: sudo apt update && sudo apt install lcov -y
+ - nuget install OpenCover -Version 4.7.922
 
 build_script:
   - mkdir build
   - cd build
-  - cmake -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%/install/ ..
+  - cmake -G "Visual Studio 14 2015" -DCMAKE_INSTALL_PREFIX=%APPVEYOR_BUILD_FOLDER%/install/ ..
   - cmake --build . --target install
- 
-after_build:
-  - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
+
+
+test_script:
+ - .\packages\OpenCover.4.7.922\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:"YourTestDll -noshadow" -output:"coverage.xml" -filter:"+[YourSUTNamepace*]* -[YourTestNamespace*]*"
+
+after_test:
+  - ps: |
+      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
+      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
+      bash codecov.sh -f "coverage.xml" -t YourUploadToken
 
 artifacts:
   - path: install/
