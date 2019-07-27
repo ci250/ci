@@ -14,9 +14,9 @@ before_install:
 before_script:
   - mkdir build
   - cd build
-  - cmake -H.. -Bbuild
+  - cmake -H.. -Bbuild -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug
 
-script: cmake --build build
+script: cmake --build build --config Debug
 
 after_success:
   - coveralls --gcov-options '\-lp'
