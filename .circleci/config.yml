@@ -11,6 +11,4 @@ jobs:
      - store_artifacts: 
          path: build/ci
          destination: ci
-     - codecov/upload:
-         file: build/ci
      - run: 'bash <(curl -s https://codecov.io/bash) | sed -E "s/token=[A-Fa-f0-9\-]+/token=[codecov token]/g" | sed -e "s/$CODECOV_TOKEN/[codecov token]/g"'
