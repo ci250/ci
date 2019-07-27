@@ -1,0 +1,14 @@
+version: v1.0
+name: ci
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: build
+    task:
+      jobs:
+        - name: build
+          commands:
+            - checkout
+            - node index.js
