@@ -2,6 +2,12 @@ cmake_minimum_required (VERSION 2.6)
 project (ci)
 add_executable(ci main.cpp)
 
+set_target_properties(ci
+    PROPERTIES
+    COMPILE_FLAGS "-ftest-coverage -fprofile-arcs"
+    LINK_FLAGS    "-lgcov --coverage"
+)
+
 if(CMAKE_COMPILER_IS_GNUCXX)
 LIST(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake_modules")
 include(CodeCoverage)
