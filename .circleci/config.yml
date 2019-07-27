@@ -3,20 +3,20 @@ orbs:
   
 workflows:
   version: 2
-  main:
+  workflow:
     jobs:
-      - build
+    - build
         
 jobs:
   build:
     docker:
-       - image: debian:stretch
+     - image: debian:stretch
      steps:
-       - checkout
-       - run: 'apt-get update && apt-get install -y sudo gcc g++ cmake lcov'
-       - run: 'cmake -H. -Bbuild && cmake --build build'
-       - store_artifacts: 
-           path: build/ci
-           destination: ci
-       - codecov/upload:
-           file: {{ coverage_report_filepath }}
+     - checkout
+     - run: 'apt-get update && apt-get install -y sudo gcc g++ cmake lcov'
+     - run: 'cmake -H. -Bbuild && cmake --build build'
+     - store_artifacts: 
+         path: build/ci
+         destination: ci
+     - codecov/upload:
+         file: {{ coverage_report_filepath }}
