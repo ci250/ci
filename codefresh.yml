@@ -2,6 +2,5 @@ version: '1.0'
 steps:
   build:
     type: build
-    working-directory: ${{main_clone}}
-    dockerfile: Dockerfile
+    dockerfile: ${{main_clone}}/Dockerfile
     image-name: ci
