@@ -6,4 +6,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/x9mq6i3j2yk4n5nl?svg=true)](https://ci.appveyor.com/project/ci249/ci)
 [![CircleCI](https://circleci.com/gh/ci249/ci.svg?style=svg)](https://circleci.com/gh/ci249/ci)
 [![codecov](https://codecov.io/gh/ci249/ci/branch/master/graph/badge.svg)](https://codecov.io/gh/ci249/ci)
-[![Codeship Status for ci249/ci](https://app.codeship.com/projects/834adc50-92c7-0137-ceb2-2ececec53521/status?branch=master)](https://app.codeship.com/projects/356683)
+[![Codeship Status for ci249/ci](https://app.codeship.com/projects/834adc50-92c7-0137-ceb2-2ececec53521/status?branch=master)](https://app.codeship.com/projects/356683) 
+[![Known Vulnerabilities](https://snyk.io//test/github/ci249/ci/badge.svg?targetFile=package.json)](https://snyk.io//test/github/ci249/ci?targetFile=package.json)
+[![Dependencies](https://david-dm.org/ci249/ci.svg)
