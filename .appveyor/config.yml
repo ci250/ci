@@ -14,7 +14,7 @@ build_script:
 
 
 test_script:
- - .\packages\OpenCover.4.7.922\tools\OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:"YourTestDll -noshadow" -output:"coverage.xml" -filter:"+[YourSUTNamepace*]* -[YourTestNamespace*]*"
+ - .\packages\OpenCover.4.7.922\tools\OpenCover.Console.exe -register:user -target:"ci.exe" -output:"coverage.xml"
 
 after_test:
   - ps: |
@@ -23,5 +23,5 @@ after_test:
       bash codecov.sh -f "coverage.xml" -t YourUploadToken
 
 artifacts:
-  - path: install/
-    name: ci
+  - path: build/
+    name: ci.exe
