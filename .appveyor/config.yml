@@ -5,7 +5,6 @@ environment:
 
 before_build:
  - nuget install OpenCover -Version 4.7.922
- - tree
 
 build_script:
   - mkdir build
@@ -15,7 +14,7 @@ build_script:
 
 
 test_script:
- - .\packages\OpenCover.4.7.922\tools\OpenCover.Console.exe -register:user -target:"ci.exe" -output:"coverage.xml"
+ - .\OpenCover.4.7.922\tools\OpenCover.Console.exe -register:user -target:"ci.exe" -output:"coverage.xml"
 
 after_test:
   - ps: |
