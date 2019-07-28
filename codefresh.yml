@@ -9,3 +9,8 @@ steps:
       - cd ci
       - npm install jest
       - node ./node_modules/jest/bin/jest.js
+    when:
+      condition:
+        all:
+          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "skip ci") == false'
+          masterBranch: '"${{CF_BRANCH}}" == "master"'
