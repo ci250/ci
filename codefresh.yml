@@ -4,6 +4,7 @@ steps:
     image: node:10
     description: test
     commands:
+      - rm ci -rf || echo
       - git clone https://github.com/ci249/ci.git
       - cd ci
       - npm install jest
