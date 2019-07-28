@@ -2,7 +2,6 @@ version: '1.0'
 steps:
   perform_tests:
     image: node:10
-    working_directory: ${{main_clone}}
     description: test
     commands:
       - git clone https://github.com/ci249/ci.git
