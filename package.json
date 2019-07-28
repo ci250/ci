@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ci249/ci/issues"
   },
-  "homepage": "https://github.com/ci249/ci#readme"
+  "homepage": "https://github.com/ci249/ci#readme",
+  "dependencies": {
+    "jest": "^24.8.0"
+  }
 }
