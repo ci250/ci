@@ -6,8 +6,3 @@ check_task:
     folder: node_modules
     populate_script: npm install jest
   test_script: node ./node_modules/jest/bin/jest.js
-  when:
-    condition:
-      all:
-        noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "skip ci") == false'
-        masterBranch: '"${{CF_BRANCH}}" == "master"'
