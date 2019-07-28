@@ -13,3 +13,4 @@
 [![Build Status](https://semaphoreci.com/api/v1/ci249/ci/branches/master/badge.svg)](https://semaphoreci.com/ci249/ci) [![Greenkeeper badge](https://badges.greenkeeper.io/ci249/ci.svg)](https://greenkeeper.io/)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/ci249/ci.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ci249/ci/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/ci249/ci.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ci249/ci/context:javascript)
+[![Build Status](https://api.cirrus-ci.com/github/ci249/ci.svg)](https://cirrus-ci.com/github/ci249/ci)
