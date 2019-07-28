@@ -1,5 +1,7 @@
 # ci
 
+One of the commits from this got featured on [gitlost](https://twitter.com/gitlost/status/1155450085226045442) ahahah what the fuck
+
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e670c80fd5a44c5b9869bce988b35975)](https://www.codacy.com/app/ci249/ci?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ci249/ci&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/e670c80fd5a44c5b9869bce988b35975)](https://www.codacy.com/app/ci249/ci?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ci249/ci&amp;utm_campaign=Badge_Coverage)
 [![Coverage Status](https://coveralls.io/repos/github/ci249/ci/badge.svg?branch=master)](https://coveralls.io/github/ci249/ci?branch=master)
