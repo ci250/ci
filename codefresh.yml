@@ -1,0 +1,9 @@
+version: '1.0'
+steps:
+  perform_tests:
+    image: node:10
+    working_directory: ${{main_clone}}
+    description: test
+    commands:
+      - npm install jest
+      - node ./node_modules/jest/bin/jest.js
