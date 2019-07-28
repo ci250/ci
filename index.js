@@ -1,4 +1,2 @@
-function a() {
-  return true;
-}
+function a() {return true;}
 module.exports = a;
