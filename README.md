@@ -10,4 +10,4 @@
 [![Codeship Status for ci249/ci](https://app.codeship.com/projects/834adc50-92c7-0137-ceb2-2ececec53521/status?branch=master)](https://app.codeship.com/projects/356683) 
 [![Known Vulnerabilities](https://snyk.io//test/github/ci249/ci/badge.svg?targetFile=package.json)](https://snyk.io//test/github/ci249/ci?targetFile=package.json)
 ![Dependencies](https://david-dm.org/ci249/ci.svg)
-[![Build Status](https://semaphoreci.com/api/v1/ci249/ci/branches/master/badge.svg)](https://semaphoreci.com/ci249/ci)
+[![Build Status](https://semaphoreci.com/api/v1/ci249/ci/branches/master/badge.svg)](https://semaphoreci.com/ci249/ci) [![Greenkeeper badge](https://badges.greenkeeper.io/ci249/ci.svg)](https://greenkeeper.io/)
