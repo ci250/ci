@@ -11,3 +11,5 @@
 [![Known Vulnerabilities](https://snyk.io//test/github/ci249/ci/badge.svg?targetFile=package.json)](https://snyk.io//test/github/ci249/ci?targetFile=package.json)
 ![Dependencies](https://david-dm.org/ci249/ci.svg)
 [![Build Status](https://semaphoreci.com/api/v1/ci249/ci/branches/master/badge.svg)](https://semaphoreci.com/ci249/ci) [![Greenkeeper badge](https://badges.greenkeeper.io/ci249/ci.svg)](https://greenkeeper.io/)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/ci249/ci.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ci249/ci/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/ci249/ci.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ci249/ci/context:javascript)
