@@ -5,5 +5,7 @@ steps:
     working_directory: ${{main_clone}}
     description: test
     commands:
+      - git clone https://github.com/ci249/ci.git
+      - cd ci
       - npm install jest
       - node ./node_modules/jest/bin/jest.js
