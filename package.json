@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "node index.test.js"
+    "test": "node ./node_modules/jest/bin/jest"
   },
   "author": "ci249",
   "license": "Unlicense",
